@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useStore } from '@/store/useStore';
+import BrandLogo from '@/components/BrandLogo';
 
 // Icons as SVG components for better control
 const Icons = {
@@ -202,21 +203,11 @@ export default function Sidebar() {
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-[var(--border-subtle)]">
-        <Link href="/dashboard" className="flex items-center gap-3">
-          {/* Logo */}
-          <div className="w-10 h-10 rounded-xl bg-[var(--gradient-accent)] flex items-center justify-center flex-shrink-0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bg-base)" strokeWidth="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          
-          {!collapsed && (
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-[var(--text-primary)]">Synapse</span>
-              <span className="text-[10px] font-medium text-[var(--accent-primary)] uppercase tracking-widest">AI Platform</span>
-            </div>
+        <Link href="/dashboard" className={`flex items-center gap-3 min-w-0 ${collapsed ? 'justify-center' : ''}`}>
+          {collapsed ? (
+            <BrandLogo size="sm" />
+          ) : (
+            <BrandLogo size="md" />
           )}
         </Link>
         

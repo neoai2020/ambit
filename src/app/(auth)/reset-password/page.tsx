@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Sparkles, Mail, ArrowRight, ArrowLeft, Check } from 'lucide-react'
+import { Mail, ArrowRight, ArrowLeft, Check } from 'lucide-react'
+import BrandLogo from '@/components/BrandLogo'
 import { createClient } from '@/lib/supabase/client'
 
 export default function ResetPasswordPage() {
@@ -43,11 +44,8 @@ export default function ResetPasswordPage() {
     >
       <div className="glass-card p-8">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] flex items-center justify-center">
-            <Sparkles className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-bold text-2xl gradient-text">Synapse AI</span>
+        <div className="flex justify-center mb-8">
+          <BrandLogo size="lg" />
         </div>
 
         {success ? (
@@ -124,7 +122,7 @@ export default function ResetPasswordPage() {
 
             <p className="mt-6 text-center text-[var(--text-secondary)] text-sm">
               Remember your password?{' '}
-              <Link href="/login" className="text-[var(--neon-blue)] hover:underline font-medium">
+              <Link href="/login" className="text-[var(--accent-secondary)] hover:underline font-medium">
                 Sign in
               </Link>
             </p>

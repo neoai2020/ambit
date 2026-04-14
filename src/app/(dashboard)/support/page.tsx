@@ -47,7 +47,7 @@ const Icons = {
 
 const faqs = [
   {
-    question: 'How do I get started with Synapse AI?',
+    question: 'How do I get started with AMBIT?',
     answer: 'Simply browse our Agents directory, select an agent that matches your task, fill in the input fields, and click Generate. Your AI-powered output will appear instantly.',
   },
   {
@@ -127,7 +127,7 @@ export default function SupportPage() {
         <a href="/training" className="card card-hover p-5 text-center">
           <div className="text-[var(--accent-secondary)] mx-auto mb-3">{Icons.book}</div>
           <h3 className="font-semibold text-[var(--text-primary)] mb-1">Training Center</h3>
-          <p className="text-sm text-[var(--text-secondary)]">Learn how to use Synapse AI</p>
+          <p className="text-sm text-[var(--text-secondary)]">Learn how to use AMBIT</p>
         </a>
         
         <a href="#contact" className="card card-hover p-5 text-center">

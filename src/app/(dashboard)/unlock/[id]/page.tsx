@@ -152,8 +152,8 @@ export default function UnlockPage() {
                     type="submit"
                     disabled={loading}
                     className="btn-primary w-full flex items-center justify-center gap-2"
-                    style={{ 
-                      background: 'linear-gradient(135deg, var(--neon-purple), var(--electric-violet))'
+                    style={{
+                      background: 'var(--gradient-brand)',
                     }}
                   >
                     {loading ? (

@@ -56,7 +56,7 @@ const Icons = {
 const lessons = [
   {
     id: 'getting-started',
-    title: 'Getting Started with Synapse AI',
+    title: 'Getting Started with AMBIT',
     description: 'Learn the basics of using AI agents for your work',
     duration: '5 min',
     icon: '🚀',
@@ -151,7 +151,7 @@ export default function TrainingPage() {
           </h1>
           
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl">
-            Learn how to get the most out of Synapse AI with our quick-start guides, 
+            Learn how to get the most out of AMBIT with our quick-start guides, 
             use case walkthroughs, and expert tips.
           </p>
         </div>

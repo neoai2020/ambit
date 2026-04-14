@@ -3,14 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import BrandLogo from '@/components/BrandLogo'
 import { createClient } from '@/lib/supabase/client'
 
 const Icons = {
-  crown: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
-    </svg>
-  ),
   user: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -105,17 +101,14 @@ export default function ProSignupPage() {
     <div className="w-full max-w-md animate-fade-up">
       <div className="card p-8 relative overflow-hidden">
         {/* Pro badge gradient background */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-blue)] to-[var(--brand-orange)]" />
         
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-white shadow-lg shadow-amber-500/25">
-            {Icons.crown}
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-2xl text-gradient">Synapse AI</span>
-            <span className="text-xs font-semibold tracking-wider text-amber-400 uppercase">Pro Account</span>
-          </div>
+        <div className="flex flex-col items-center gap-2 mb-8">
+          <BrandLogo size="lg" />
+          <span className="text-xs font-semibold tracking-wider text-[var(--accent-primary)] uppercase">
+            Pro account
+          </span>
         </div>
 
         <h1 className="text-2xl font-bold text-center mb-2 text-[var(--text-primary)]">Create Pro Account</h1>
@@ -127,7 +120,7 @@ export default function ProSignupPage() {
         <div className="space-y-2 mb-6">
           {features.map((feature, i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-              <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="w-5 h-5 rounded-full bg-[var(--brand-blue)]/25 flex items-center justify-center text-[var(--accent-primary)]">
                 {Icons.star}
               </div>
               {feature}

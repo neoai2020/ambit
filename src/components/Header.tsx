@@ -56,7 +56,7 @@ export default function Header() {
     }
     
     // Default
-    return { title: 'Synapse AI', subtitle: '' };
+    return { title: 'AMBIT', subtitle: '' };
   };
   
   const pageInfo = getPageInfo();

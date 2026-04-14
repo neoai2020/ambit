@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import BrandLogo from '@/components/BrandLogo'
 import { motion } from 'framer-motion'
 import { 
   Sparkles, 
@@ -35,7 +36,7 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      quote: "Synapse AI transformed how I create content. What used to take hours now takes minutes.",
+      quote: "AMBIT transformed how I create content. What used to take hours now takes minutes.",
       author: "Sarah M.",
       role: "Content Marketer",
     },
@@ -57,10 +58,7 @@ export default function HomePage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-primary)] bg-[var(--bg-primary)]/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl gradient-text">Synapse AI</span>
+            <BrandLogo size="md" />
           </Link>
           
           <div className="flex items-center gap-4">
@@ -258,7 +256,7 @@ export default function HomePage() {
                 Ready to 10X Your Productivity?
               </h2>
               <p className="text-[var(--text-secondary)] text-lg mb-8 max-w-xl mx-auto">
-                Join thousands of professionals using Synapse AI to create better content, faster.
+                Join thousands of professionals using AMBIT to create better content, faster.
               </p>
               <Link href="/signup" className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
                 <Sparkles size={20} />
@@ -289,14 +287,12 @@ export default function HomePage() {
       <footer className="py-12 px-6 border-t border-[var(--border-primary)]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-semibold">Synapse AI</span>
+            <BrandLogo size="sm" />
+            <span className="font-semibold text-[var(--text-primary)]">AMBIT</span>
           </div>
           
           <p className="text-sm text-[var(--text-muted)]">
-            © 2024 Synapse AI. All rights reserved.
+            © 2026 AMBIT. All rights reserved.
           </p>
           
           <div className="flex items-center gap-6 text-sm text-[var(--text-secondary)]">

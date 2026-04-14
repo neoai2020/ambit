@@ -64,7 +64,7 @@ export const useStore = create<AppState>()(
       })),
     }),
     {
-      name: 'synapse-storage',
+      name: 'ambit-storage',
       partialize: (state) => ({
         unlockedUpsells: state.unlockedUpsells,
         savedOutputs: state.savedOutputs,

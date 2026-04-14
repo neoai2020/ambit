@@ -72,7 +72,7 @@ const categories = [
 const featuredAgents = agents.slice(0, 6);
 
 const trainingVideos = [
-  { id: 1, title: 'Getting Started with Synapse', duration: '5:32', thumbnail: '/thumb-1.jpg', category: 'Basics' },
+  { id: 1, title: 'Getting Started with AMBIT', duration: '5:32', thumbnail: '/thumb-1.jpg', category: 'Basics' },
   { id: 2, title: 'Master Content Creation', duration: '8:15', thumbnail: '/thumb-2.jpg', category: 'Writing' },
   { id: 3, title: 'Automate Your Workflow', duration: '6:48', thumbnail: '/thumb-3.jpg', category: 'Advanced' },
 ];

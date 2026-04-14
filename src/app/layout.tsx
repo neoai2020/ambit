@@ -13,8 +13,13 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Synapse AI - Your AI Workforce',
-  description: 'Access 100+ specialized AI agents for writing, marketing, coding, and more. One click. One agent. One perfect result.',
+  title: 'AMBIT — Your AI Workforce',
+  description:
+    'AMBIT gives you 100+ specialized AI agents for writing, marketing, coding, and more. One click. One agent. One perfect result.',
+  icons: {
+    icon: '/ambit-logo.png',
+    apple: '/ambit-logo.png',
+  },
 }
 
 export default function RootLayout({
