@@ -2,9 +2,9 @@
 
 :root {
   /* AMBIT brand (navy wordmark, royal blue + orange accents) */
-  --brand-navy: #2e3192;
-  --brand-blue: #4449bc;
-  --brand-orange: #f58220;
+  --brand-navy: #4140b6;
+  --brand-blue: #4344b5;
+  --brand-orange: #f37d21;
 
   --accent-primary: var(--brand-orange);
   --accent-secondary: var(--brand-blue);

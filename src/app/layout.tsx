@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description:
     'AMBIT gives you 100+ specialized AI agents for writing, marketing, coding, and more. One click. One agent. One perfect result.',
   icons: {
-    icon: '/ambit-logo.png',
-    apple: '/ambit-logo.png',
+    icon: '/ambit-mark.png',
+    apple: '/ambit-mark.png',
   },
 }
 
