@@ -44,19 +44,29 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Define public routes that don't require authentication
-  const publicRoutes = ['/login', '/signup', '/reset-password', '/auth/callback']
-  const isPublicRoute = publicRoutes.some(route => request.nextUrl.pathname.startsWith(route))
+  const path = request.nextUrl.pathname
 
-  if (!user && !isPublicRoute && request.nextUrl.pathname !== '/') {
-    // Redirect unauthenticated users to login
+  // Unauthenticated users may access these (login, signup, password reset, OAuth callback).
+  const isPublicRoute =
+    path === '/login' ||
+    path === '/reset-password' ||
+    path.startsWith('/signup') ||
+    path.startsWith('/auth/callback')
+
+  // Logged-in users should not stay on sign-in / sign-up / reset-request screens
+  // (but they may access /update-password after a recovery link — not listed here).
+  const isGuestEntryRoute =
+    path === '/login' ||
+    path === '/reset-password' ||
+    path.startsWith('/signup')
+
+  if (!user && !isPublicRoute && path !== '/') {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     return NextResponse.redirect(url)
   }
 
-  if (user && isPublicRoute) {
-    // Redirect authenticated users away from auth pages
+  if (user && isGuestEntryRoute) {
     const url = request.nextUrl.clone()
     url.pathname = '/dashboard'
     return NextResponse.redirect(url)

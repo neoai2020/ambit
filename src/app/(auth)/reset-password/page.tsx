@@ -126,6 +126,12 @@ export default function ResetPasswordPage() {
                 Sign in
               </Link>
             </p>
+            <p className="mt-3 text-center text-[var(--text-secondary)] text-sm">
+              Need an account?{' '}
+              <Link href="/signup" className="text-[var(--accent-primary)] hover:underline font-medium">
+                Sign up
+              </Link>
+            </p>
           </>
         )}
       </div>

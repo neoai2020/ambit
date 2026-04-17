@@ -217,6 +217,12 @@ export default function SignupPage() {
             Sign in
           </Link>
         </p>
+        <p className="mt-3 text-center text-[var(--text-secondary)] text-sm">
+          Want the Pro plan?{' '}
+          <Link href="/signup/pro" className="text-[var(--accent-primary)] hover:underline font-medium">
+            Create a Pro account
+          </Link>
+        </p>
       </div>
     </div>
   )

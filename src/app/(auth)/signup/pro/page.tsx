@@ -221,8 +221,14 @@ export default function ProSignupPage() {
 
         <p className="mt-6 text-center text-[var(--text-secondary)] text-sm">
           Already have an account?{' '}
-          <Link href="/login" className="text-amber-400 hover:underline font-medium">
+          <Link href="/login" className="text-[var(--accent-primary)] hover:underline font-medium">
             Sign in
+          </Link>
+        </p>
+        <p className="mt-3 text-center text-[var(--text-secondary)] text-sm">
+          Standard account instead?{' '}
+          <Link href="/signup" className="text-[var(--accent-primary)] hover:underline font-medium">
+            Free signup
           </Link>
         </p>
       </div>

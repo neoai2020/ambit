@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import BrandLogo from '@/components/BrandLogo'
 import { createClient } from '@/lib/supabase/client'
 
@@ -38,14 +38,17 @@ const Icons = {
   ),
 }
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const urlError = searchParams.get('error')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const supabase = createClient()
+  const displayError = error || urlError || ''
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -84,9 +87,9 @@ export default function LoginPage() {
           Sign in to access your AI workforce
         </p>
 
-        {error && (
+        {displayError && (
           <div className="p-4 mb-6 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm animate-fade-up">
-            {error}
+            {displayError}
           </div>
         )}
 
@@ -170,8 +173,28 @@ export default function LoginPage() {
           <Link href="/signup" className="text-[var(--accent-primary)] hover:underline font-medium">
             Sign up
           </Link>
+          {' · '}
+          <Link href="/signup/pro" className="text-[var(--accent-primary)] hover:underline font-medium">
+            Pro signup
+          </Link>
         </p>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="w-full max-w-md animate-fade-up">
+          <div className="card p-8 min-h-[420px] flex items-center justify-center">
+            <div className="loader" />
+          </div>
+        </div>
+      }
+    >
+      <LoginForm />
+    </Suspense>
   )
 }
