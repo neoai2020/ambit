@@ -1,3 +1,6 @@
+/** Avoid static caching of auth pages at the edge (pairs with Cache-Control in next.config). */
+export const dynamic = "force-dynamic"
+
 export default function AuthLayout({
   children,
 }: {
